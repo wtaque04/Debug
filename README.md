@@ -81,7 +81,7 @@ Servidor Frontend
 ### Scripts de ejecuion
 
 1.  Servidor: npm run start
-2.  Pruebas: playwright test
+2.  Pruebas: npm run playwright test
 ---
 ### Notas importantes:
 
