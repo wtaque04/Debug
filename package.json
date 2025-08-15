@@ -8,6 +8,7 @@
     "@playwright/test": "^1.54.2",
     "@types/express": "^5.0.3",
     "@types/node": "^24.2.1",
+    "concurrently": "^9.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
@@ -19,8 +20,17 @@
     "test": "tests"
   },
   "scripts": {
-     "dev": "ts-node backend/index.ts",
-    "test": "playwright test"
+    "dev": "ts-node backend/index.ts",
+    "start:backend": "ts-node backend/index.ts",
+    "start:frontend": "ts-node frontend/login.ts",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "test:corregido": "playwright test tests/test-asistencia-corregido.spec.ts",
+    "test:falla": "playwright test tests/test:asistencia-falla.spec.ts",
+    "test": "playwright test",
+    "test:ambos": "playwright test tests/test-asistencia-corregido.spec.ts tests/test-asistencia-falla.spec.ts",
+    "report": "playwright show-report",
+    "test-ui": "playwright test --ui",
+    "clean": "rm -rf playwright-report test-results .playwright"
   },
   "keywords": [],
   "author": "",
