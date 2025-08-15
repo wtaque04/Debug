@@ -1,0 +1,47 @@
+<!-- frontend/login.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="loginForm">
+    <input type="text" name="usuario" placeholder="Usuario" required>
+    <input type="password" name="clave" placeholder="Clave" required>
+    <button type="submit">Ingresar</button>
+  </form>
+
+  <div id="asistencia" style="display: none;">
+    <button id="solicitar">Solicitar asistencia</button>
+    <button id="medica">Asistencia médica a domicilio</button>
+
+    <input id="direccion" placeholder="Dirección">
+    <button id="btnConfirmar">Confirmar</button>
+
+    <div class="resultado-confirmacion" style="margin-top: 10px;"></div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      // Simula login exitoso
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('asistencia').style.display = 'block';
+    });
+
+    document.getElementById('solicitar').addEventListener('click', function () {
+      
+    });
+
+    document.getElementById('medica').addEventListener('click', function () {
+      
+    });
+
+    document.getElementById('btnConfirmar').addEventListener('click', function () {
+      document.querySelector('.resultado-confirmacion').innerText = 'Solicitud creada exitosamente';
+    });
+  </script>
+</body>
+</html>
